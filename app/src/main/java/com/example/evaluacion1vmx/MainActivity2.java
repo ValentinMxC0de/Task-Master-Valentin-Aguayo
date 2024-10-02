@@ -50,15 +50,15 @@ public class MainActivity2 extends AppCompatActivity {
     @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {
-        // No llames a super.onBackPressed() aquí, ya que queremos controlar el cierre de la actividad
+       
 
-        AlertDialog dialog = showFeedbackDialog(); // Obtén una referencia al diálogo creado
+        AlertDialog dialog = showFeedbackDialog(); 
 
-        // Configura un listener para detectar cuándo se cierra el diálogo
+       
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                finish(); // Cierra la actividad cuando el diálogo se cierra
+                finish(); 
             }
         });
     }
@@ -76,13 +76,13 @@ public class MainActivity2 extends AppCompatActivity {
         submitButton.setOnClickListener(v -> {
             float rating = ratingBar.getRating();
 
-            // Save the tasks to SharedPreferences before finishing
+            
             saveTasks();
 
-            // Close the dialog
+            
             dialog.dismiss();
 
-            // Delay finishing the activity to allow the dialog to close smoothly
+            
             new Handler().postDelayed(this::finish, 9000); // 300ms delay
         });
 
